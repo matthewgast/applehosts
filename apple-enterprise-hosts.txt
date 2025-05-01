@@ -1,0 +1,346 @@
+# Title: apple-enterprise-hosts.txt
+#
+# This hosts file is a list of hosts required by Apple devices, taken from
+# https://support.apple.com/en-us/101555
+#
+# Date: 01 May 2025
+#
+# Fetch the latest version of this file: https://raw.githubusercontent.com/matthewgast/applehosts/master/hosts
+# Project home page: https://github.com/matthewgast/applehosts
+# Project releases: https://github.com/matthewgast/applehosts/releases
+#
+# ===============================================================
+
+# Sections in this document
+#
+# 1. Device setup
+# 2. Device management
+# 3. Apps & content
+# 4. Carrier updates
+
+# =====
+# Device setup
+#
+# Access required during setup, when installing/updating/restoring the OS 
+# =====
+
+albert.apple.com	# Activation
+captive.apple.com	# Validation for CWP networks
+gs.apple.com
+humb.apple.com
+static.ips.apple.com
+sq-device.apple.com	# eSIM activation
+tbsc.apple.com
+time-ios.apple.com
+time.apple.com
+time-macos.apple.com
+
+# ===== End of Device Setup =====
+
+
+# =====
+# Device management
+#
+# Required for devices enrolled in MDM 
+# =====
+
+*.push.apple.com
+deviceenrollment.apple.com
+deviceservices-external.apple.com
+gdmf.apple.com
+identity.apple.com
+iprofiles.apple.com
+mdmenrollment.apple.com
+setup.icloud.com
+vpp.itunes.apple.com
+*.appattest.apple.com
+axm-servicediscovery.apple.com
+
+# ===== End of Device management =====
+
+# =====
+# Software updates
+#
+# Required to update iOS, iPadOS, MacOS, watchOS, tvOS, and visionOS
+# =====
+
+appldnld.apple.com
+configuration.apple.com
+gdmf.apple.com
+gg.apple.com
+gs.apple.com
+ig.apple.com
+mesu.apple.com
+oscdn.apple.com
+osrecovery.apple.com
+skl.apple.com
+swcdn.apple.com
+swdist.apple.com
+swdownload.apple.com
+swscan.apple.com
+updates-http.cdn-apple.com
+updates.cdn-apple.com
+xp.apple.com
+gdmf-ados.apple.com
+gsra.apple.com
+wkms-public.apple.com
+fcs-keys-pub-prod.cdn-apple.com
+
+# ===== End of Software Updates  =====
+
+# =====
+# Apps & content
+#
+# Used for installing and updating apps, using app features, and downloading content 
+# =====
+
+*.itunes.apple.com
+*.apps.apple.com
+*.mzstatic.com
+itunes.apple.com
+ppq.apple.com
+api.apple-cloudkit.com
+*.appattest.apple.com
+*.apps-marketplace.apple.com
+token.safebrowsing.apple
+audiocontentdownload.apple.com
+devimages-cdn.apple.com
+download.developer.apple.com
+playgrounds-assets-cdn.apple.com
+playgrounds-cdn.apple.com
+sylvan.apple.com
+gateway.icloud.com
+
+# ===== End of Apps & content  =====
+
+# =====
+# Carrier updates
+#
+# Cell devices uses these hosts to install carrier bundle updates
+# =====
+
+appldnld.apple.com
+appldnld.apple.com.edgesuite.net
+itunes.com
+itunes.apple.com
+updates-http.cdn-apple.com
+updates.cdn-apple.com
+
+# ===== End of Carrier updates  =====
+
+# =====
+# Content caching
+#
+# Macs with content caching uses these 
+# =====
+
+lcdn-registration.apple.com
+suconfig.apple.com
+xp-cdn.apple.com
+lcdn-locator.apple.com
+serverstatus.apple.com
+
+# ===== End of content caching  =====
+
+# =====
+# DNS resolution
+#
+# Encrypted DNS in iOS 14, iPadOS 14, tvOS 14, and Big Sur and later use this host
+# =====
+
+# Remove the comment character to add this host to the whitelist
+# doh.dns.apple.com
+
+# ===== End of DNS resolution  =====
+
+# =====
+# Certificate validation
+#
+# These hosts are used to validate certificates used by all the other functions in this list
+# =====
+
+certs.apple.com
+crl.apple.com
+crl3.digicert.com
+crl4.digicert.com
+ocsp.apple.com
+ocsp.digicert.cn
+ocsp.digicert.com
+ocsp2.apple.com
+valid.apple.com
+
+# ===== End of Certificate Validation  =====
+
+# =====
+# Apple account
+#
+# Used for all apple account services: iCloud, apps, Xcode, etc...
+# =====
+
+account.apple.com
+appleid.cdn-apple.com
+idmsa.apple.com
+gsa.apple.com
+
+# ===== End of Apple account =====
+
+# =====
+# iCloud
+#
+# In addition to the account services above, these hosts are used for iCloud
+# =====
+
+*.apple-cloudkit.com
+*.apple-livephotoskit.com
+*.apzones.com
+*.cdn-apple.com
+*.gc.apple.com
+*.icloud.com
+*.icloud.com.cn
+*.icloud.apple.com
+*.icloud-content.com
+*.iwork.apple.com
+mask.icloud.com
+mask-h2.icloud.com
+mask-api.icloud.com
+
+# ===== End of iCloud  =====
+
+# =====
+# Apple Intelligence/Siri/Search
+#
+# Used for private cloud compute, Siri requests, and Apple Searc
+# =====
+
+guzzoni.apple.com
+*.smooit.apple.com
+apple-relay.cloudflare.com
+apple-relay.fastly-edge.com
+cp4.cloudflare.com
+apple-relay.apple.com
+
+# ===== End of Apple Intelligence / Siri / Search =====
+
+# =====
+# Associated Domains
+#
+# Associated domains in iOS/iPadOS 14+ and MacOS Big Sur and later
+# =====
+
+app-site-association.cdn-apple.com
+app-site-association.networking.apple
+
+# ===== End of Associated Domains  =====
+
+
+# =====
+# Tap to Pay on iPhone
+#
+# Required for contactless payment
+# =====
+
+pos-device.apple.com
+humb.apple.com
+# Used for analytics sharing; remove comment character to enable
+# iphonesubmissions.apple.com
+
+# ===== End of Tap to Pay =====
+
+# =====
+# ID Verifier on iPhone
+#
+# To accept Mobile IDs, these hosts are required
+# =====
+
+smp-device-content.apple.com
+idv.cdn-apple.com
+idv-prod1.apple.com
+humb.apple.com
+
+# ===== End of ID Verifier  =====
+
+# =====
+# Beta updates
+#
+# Needed to sign into updates and report feedback
+# =====
+
+bpapi.apple.com
+cssubmissions.apple.com
+fba.apple.com
+
+# ===== End of Beta updates  =====
+
+# =====
+# Apple diagnostics
+#
+# This is used to report diagnostics.
+# =====
+
+# Remove the comment character to add this host to the whitelist
+# diagassets.apple.com
+
+# ===== End of diagnostics  =====
+
+# =====
+# Business/School Manager
+#
+# Required for ABM and ASM 
+# =====
+
+# Admins and managers
+# -----
+
+*.business.apple.com
+*.school.apple.com
+appleid.cdn-apple.com
+idmsa.apple.com
+*.itunes.apple.com
+*.mzstatic.com
+api.ent.apple.com
+api.edu.apple.com
+statici.icloud.com
+*.vertexsmb.com
+www.apple.com
+upload.appleschoolcontent.com
+
+# Employees and students
+# -----
+
+ws-ee-maidsvc.icloud.com
+
+# ===== End of Business/School Manager =====
+
+# =====
+# Appple Business Essentials device management
+#
+# Needed for Apple Business Essentials
+# =====
+
+axm-adm-enroll.apple.com
+axm-adm-mdm.apple.com
+axm-adm-scep.apple.com
+axm-app.apple.com
+*.apple-mapkit.com
+icons.axm-usercontent-apple.com
+
+# ===== End of Business Essentials device management  =====
+
+# =====
+# Classroom and Schoolwork apps
+#
+# Needed for student and teacher devices using Classroom & Schoolwork (which also require Apple account and iCloud)
+# =====
+
+s.mzstatic.com
+play.itunes.apple.com
+ws-ee-maidsvc.icloud.com
+ws.school.apple.com
+pg-bootstrap.itunes.apple.com
+cls-iosclient.itunes.apple.com
+cls-ingest.itunes.apple.com
+
+# ===== End of Classroom & Schoolwork  =====
+
+
+
