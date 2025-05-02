@@ -3,344 +3,321 @@
 # This hosts file is a list of hosts required by Apple devices, taken from
 # https://support.apple.com/en-us/101555
 #
-# Date: 01 May 2025
+# Date: 02 May 2025
 #
-# Fetch the latest version of this file: https://raw.githubusercontent.com/matthewgast/applehosts/master/hosts
+# Fetch the latest version of this file: https://raw.githubusercontent.com/matthewgast/applehosts/refs/heads/main/apple-enterprise-hosts.txt
 # Project home page: https://github.com/matthewgast/applehosts
 # Project releases: https://github.com/matthewgast/applehosts/releases
 #
-# ===============================================================
+# ==============================================================================
 
 # Sections in this document
 #
-# 1. Device setup
-# 2. Device management
-# 3. Apps & content
-# 4. Carrier updates
+#  1. [SEC-SETUP] Device setup
+#  2. [SEC-DEV] Device management
+#  3. [SEC-UPDATE] Software updates
+#  4. [SEC-APPS] Apps & content
+#  5. [SEC-CARRIER] Carrier updates
+#  6. [SEC-CACHE] Content caching
+#  7. [SEC-DNS] DNS resolution
+#  8. [SEC-CERT] Certificate validation
+#  9. [SEC-ACCT] Apple account services
+# 10. [SEC-ICLOUD] iCloud sservices
+# 11. [SEC-INTEL] Apple intelligence / Siri
+# 12. [SEC-DOMAIN] Associated domains
+# 13. [SEC-TAPPAY] Tap to pay
+# 14. [SEC-ID] ID Verifier
+# 15. [SEC-DIAG] Diagnostics
+# 16. [SEC-BETA] Beta updates
+# 17. [SEC-BSM] Apple Business Manager / Apple School Manager
+# 18. [SEC-ABE] Apple Business Essentials
+# 19. [SEC-CLS-SCHL] Classroom and Schoolwork applications
 
-# =====
-# Device setup
+# ==============================================================================
+# [SEC-SETUP] Device setup
 #
-# Access required during setup, when installing/updating/restoring the OS 
-# =====
+# Access required during setup, when installing/updating/restoring the OS on
+# all Apple devices.
+# ==============================================================================
 
-albert.apple.com	# Activation
-captive.apple.com	# Validation for CWP networks
+albert.apple.com		# Activation
+captive.apple.com		# Validation for CWP networks
 gs.apple.com
 humb.apple.com
 static.ips.apple.com
-sq-device.apple.com	# eSIM activation
+sq-device.apple.com		# eSIM activation
 tbsc.apple.com
-time-ios.apple.com
-time.apple.com
-time-macos.apple.com
+time-ios.apple.com		# Set device time
+time.apple.com			# Set device time
+time-macos.apple.com		# Set device time
 
-# ===== End of Device Setup =====
-
-
-# =====
-# Device management
+# ==============================================================================
+# [SEC-DEV] Device management
 #
-# Required for devices enrolled in MDM 
-# =====
+# Required for devices enrolled in Apple MDMs
+# ==============================================================================
 
-*.push.apple.com
-deviceenrollment.apple.com
-deviceservices-external.apple.com
-gdmf.apple.com
-identity.apple.com
-iprofiles.apple.com
-mdmenrollment.apple.com
-setup.icloud.com
-vpp.itunes.apple.com
-*.appattest.apple.com
-axm-servicediscovery.apple.com
+(\.*)\.push.apple.com$		    # Push notifications
+deviceenrollment.apple.com	    # DEP provisional enrollment
+deviceservices-external.apple.com   # Disable Activation Lock
+gdmf.apple.com			    # Identify available software updates
+identity.apple.com		    # APN cert request
+iprofiles.apple.com		    # Enrollment profiles used for ASM/ABM
+mdmenrollment.apple.com		    # MDM servers for enrollment profiles
+setup.icloud.com		    # Log in to managed Apple accounts
+vpp.itunes.apple.com		    # MDM servers for Apps, Books, and licensing
+*.appattest.apple.com		    # Device attestation
+axm-servicediscovery.apple.com	    # Service discovery for enrollment
 
-# ===== End of Device management =====
-
-# =====
-# Software updates
+# ==============================================================================
+# [SEC-UPDATE] Software updates
 #
 # Required to update iOS, iPadOS, MacOS, watchOS, tvOS, and visionOS
-# =====
+# ==============================================================================
 
-appldnld.apple.com
-configuration.apple.com
-gdmf.apple.com
-gg.apple.com
-gs.apple.com
-ig.apple.com
-mesu.apple.com
-oscdn.apple.com
-osrecovery.apple.com
-skl.apple.com
-swcdn.apple.com
-swdist.apple.com
-swdownload.apple.com
-swscan.apple.com
-updates-http.cdn-apple.com
-updates.cdn-apple.com
+appldnld.apple.com		   # iOS, iPadOS, watchOS updates
+configuration.apple.com		   # Rosetta 2 updates
+gdmf.apple.com			   # Software update catalog
+gg.apple.com			   # iOS, iPadOS, watchOS updates
+gs.apple.com			   # iOS, iPadOS, watchOS updates
+ig.apple.com			   # macOS updates
+mesu.apple.com			   # Software update catalogs
+oscdn.apple.com			   # macOS Recovery
+osrecovery.apple.com		   # macOS Recovery
+skl.apple.com			   # macOS Recovery
+swcdn.apple.com			   # macOS Recovery
+swdist.apple.com		   # macOS Recovery
+swdownload.apple.com		   # macOS Recovery
+swscan.apple.com		   # macOS Recovery
+updates-http.cdn-apple.com	   # Software update downloads
+updates.cdn-apple.com		   # Software update downloads
 xp.apple.com
-gdmf-ados.apple.com
-gsra.apple.com
-wkms-public.apple.com
-fcs-keys-pub-prod.cdn-apple.com
+gdmf-ados.apple.com		   # Catalog updates for components
+gsra.apple.com			   # OS updates for components
+wkms-public.apple.com		   # iOS/iPadOS/macOS installation
+fcs-keys-pub-prod.cdn-apple.com	   # iOS/iPadOS/macOS installation
 
-# ===== End of Software Updates  =====
-
-# =====
-# Apps & content
+# ==============================================================================
+# [SEC-APPS] Apps & content
 #
-# Used for installing and updating apps, using app features, and downloading content 
-# =====
+# Used for installing and updating apps, using app features, and downloading
+# content 
+# ==============================================================================
 
-*.itunes.apple.com
-*.apps.apple.com
-*.mzstatic.com
+(\.*)\.itunes.apple.com$		# Store content
+(\.*)\.itunes.apple.com$		# Store content
+(\.*)\.apps.apple.com$			# Store content; alternative marketplaces
+(\.*)\.mzstatic.com$
 itunes.apple.com
-ppq.apple.com
-api.apple-cloudkit.com
-*.appattest.apple.com
-*.apps-marketplace.apple.com
-token.safebrowsing.apple
-audiocontentdownload.apple.com
-devimages-cdn.apple.com
-download.developer.apple.com
-playgrounds-assets-cdn.apple.com
-playgrounds-cdn.apple.com
-sylvan.apple.com
-gateway.icloud.com
+ppq.apple.com				# Enterprise app validation
+api.apple-cloudkit.com			# App notarization
+(\.*)\.appattest.apple.com$		# App validation/Touch ID/FaceID
+(\.*)\.apps-marketplace.apple.com$	# Install apps from web/marketplaces
+token.safebrowsing.apple		# Safari website warnings
+audiocontentdownload.apple.com		# GarageBand content
+devimages-cdn.apple.com			# Xcode components
+download.developer.apple.com		# Xcode components
+playgrounds-assets-cdn.apple.com	# Swift playgrounds
+playgrounds-cdn.apple.com		# Swift playgrounds
+sylvan.apple.com			# Aerial screen saver/wallpaper
+gateway.icloud.com			# Voice control assets
 
-# ===== End of Apps & content  =====
-
-# =====
-# Carrier updates
+# ==============================================================================
+# [SEC-CARRIER] Carrier updates
 #
 # Cell devices uses these hosts to install carrier bundle updates
-# =====
+# ==============================================================================
 
-appldnld.apple.com
-appldnld.apple.com.edgesuite.net
-itunes.com
-itunes.apple.com
-updates-http.cdn-apple.com
-updates.cdn-apple.com
+appldnld.apple.com			# Carrier bundle updates
+appldnld.apple.com.edgesuite.net	# Carrier bundle updates	
+itunes.com				# Carrier bundle update discovery
+itunes.apple.com			# Carrier bundle update discovery
+updates-http.cdn-apple.com		# Carrier bundle updates
+updates.cdn-apple.com			# Carrier bundle updates
 
-# ===== End of Carrier updates  =====
-
-# =====
-# Content caching
+# ==============================================================================
+# [SEC-CACHE] Content caching
 #
 # Macs with content caching uses these 
-# =====
+# ==============================================================================
 
-lcdn-registration.apple.com
-suconfig.apple.com
-xp-cdn.apple.com
-lcdn-locator.apple.com
-serverstatus.apple.com
+lcdn-registration.apple.com		# Server registration
+suconfig.apple.com			# Configuration
+xp-cdn.apple.com			# Reporting
+lcdn-locator.apple.com			# Locator service
+serverstatus.apple.com			# Public IP determination
 
-# ===== End of content caching  =====
-
-# =====
-# DNS resolution
+# ==============================================================================
+# [SEC-DNS] DNS resolution
 #
-# Encrypted DNS in iOS 14, iPadOS 14, tvOS 14, and Big Sur and later use this host
-# =====
+# Encrypted DNS in iOS 14, iPadOS 14, tvOS 14, and Big Sur and later use this
+# host
+# ==============================================================================
 
-# Remove the comment character to add this host to the whitelist
-# doh.dns.apple.com
+# Do not allow the following host
+# doh.dns.apple.com			# DoH service
 
-# ===== End of DNS resolution  =====
-
-# =====
-# Certificate validation
+# ==============================================================================
+# [SEC-CERT] Certificate validation
 #
-# These hosts are used to validate certificates used by all the other functions in this list
-# =====
+# These hosts are used to validate certificates used by all the other functions
+# in this list
+# ==============================================================================
 
-certs.apple.com
-crl.apple.com
-crl3.digicert.com
-crl4.digicert.com
-ocsp.apple.com
-ocsp.digicert.cn
-ocsp.digicert.com
-ocsp2.apple.com
-valid.apple.com
+certs.apple.com				# Certificate validation
+crl.apple.com				# Certificate validation
+crl3.digicert.com			# Certificate validation
+crl4.digicert.com			# Certificate validation
+ocsp.apple.com				# Certificate validation
+ocsp.digicert.cn			# Certificate validation in China
+ocsp.digicert.com			# Certificate validation
+ocsp2.apple.com				# Certificate validation
+valid.apple.com				# Certificate validation
 
-# ===== End of Certificate Validation  =====
-
-# =====
-# Apple account
+# ==============================================================================
+# [SEC-ACCT] Apple account
 #
 # Used for all apple account services: iCloud, apps, Xcode, etc...
-# =====
+# ==============================================================================
 
-account.apple.com
-appleid.cdn-apple.com
-idmsa.apple.com
-gsa.apple.com
+account.apple.com			# Auth in System Settings & Prefs
+appleid.cdn-apple.com			# Auth in System Settings & Prefs
+idmsa.apple.com				# Authentication
+gsa.apple.com				# Authentication
 
-# ===== End of Apple account =====
-
-# =====
-# iCloud
+# ==============================================================================
+# [SEC-ICLOUD] iCloud
 #
 # In addition to the account services above, these hosts are used for iCloud
-# =====
+# ==============================================================================
 
-*.apple-cloudkit.com
-*.apple-livephotoskit.com
-*.apzones.com
-*.cdn-apple.com
-*.gc.apple.com
-*.icloud.com
-*.icloud.com.cn
-*.icloud.apple.com
-*.icloud-content.com
-*.iwork.apple.com
-mask.icloud.com
-mask-h2.icloud.com
-mask-api.icloud.com
+(\.*)\.apple-cloudkit.com$		# iCloud services
+(\.*)\.apple-livephotoskit.com$		# iCloud services
+(\.*)\.apzones.com$			# iCloud services in China
+(\.*)\.cdn-apple.com$			# iCloud services
+(\.*)\.gc.apple.com$			# iCloud services
+(\.*)\.icloud.com$			# iCloud services
+(\.*)\.icloud.com.cn$			# iCloud services in China
+(\.*)\.icloud.apple.com$		# iCloud services
+(\.*)\.icloud-content.com$		# iCloud services
+(\.*)\.iwork.apple.com$			# iWork documents
+mask.icloud.com				# iCloud Private Relay
+mask-h2.icloud.com			# iCloud Private Relay
+mask-api.icloud.com			# iCloud Private Relay
 
-# ===== End of iCloud  =====
-
-# =====
-# Apple Intelligence/Siri/Search
+# ==============================================================================
+# [SEC-INTEL] Apple Intelligence/Siri/Search
 #
 # Used for private cloud compute, Siri requests, and Apple Searc
-# =====
+# ==============================================================================
 
-guzzoni.apple.com
-*.smooit.apple.com
-apple-relay.cloudflare.com
-apple-relay.fastly-edge.com
-cp4.cloudflare.com
-apple-relay.apple.com
+guzzoni.apple.com			# Siri and dictation
+(\.*)\.smoot.apple.com$			# Search: Siri, Spotlight, Lookup, Safari, News, Messages, Music
+apple-relay.cloudflare.com		# Private cloud compute
+apple-relay.fastly-edge.com		# Private cloud compute
+cp4.cloudflare.com			# Private cloud compute
+apple-relay.apple.com			# Apple Intelligence Extensions
 
-# ===== End of Apple Intelligence / Siri / Search =====
-
-# =====
-# Associated Domains
+# ==============================================================================
+# [SEC-DOMAIN] Associated Domains
 #
 # Associated domains in iOS/iPadOS 14+ and MacOS Big Sur and later
-# =====
+# ==============================================================================
 
-app-site-association.cdn-apple.com
-app-site-association.networking.apple
+app-site-association.cdn-apple.com	# Associated domains for universal links
+app-site-association.networking.apple	# Associated domains for universal links
 
-# ===== End of Associated Domains  =====
-
-
-# =====
-# Tap to Pay on iPhone
+# ==============================================================================
+# [SEC-TAPPAY] Tap to Pay on iPhone
 #
 # Required for contactless payment
-# =====
+# ==============================================================================
 
-pos-device.apple.com
-humb.apple.com
+pos-device.apple.com			# Tap to Pay (iPhone)
+humb.apple.com				# Tap to Pay (iPhone)
 # Used for analytics sharing; remove comment character to enable
-# iphonesubmissions.apple.com
+iphonesubmissions.apple.com  		# Analytics 	     	
 
-# ===== End of Tap to Pay =====
-
-# =====
-# ID Verifier on iPhone
+# ==============================================================================
+# [SEC-ID] ID Verifier on iPhone
 #
 # To accept Mobile IDs, these hosts are required
-# =====
+# ==============================================================================
 
-smp-device-content.apple.com
-idv.cdn-apple.com
-idv-prod1.apple.com
-humb.apple.com
+smp-device-content.apple.com		# ID Verifier (iPhone)
+idv.cdn-apple.com			# ID Verifier (iPhone)
+idv-prod1.apple.com			# ID Verifier (iPhone)
+humb.apple.com				# ID Verifier (iPhone)
 
-# ===== End of ID Verifier  =====
-
-# =====
-# Beta updates
-#
-# Needed to sign into updates and report feedback
-# =====
-
-bpapi.apple.com
-cssubmissions.apple.com
-fba.apple.com
-
-# ===== End of Beta updates  =====
-
-# =====
-# Apple diagnostics
+# ==============================================================================
+# [SEC-DIAG] Apple diagnostics
 #
 # This is used to report diagnostics.
-# =====
+# ==============================================================================
 
 # Remove the comment character to add this host to the whitelist
 # diagassets.apple.com
 
-# ===== End of diagnostics  =====
-
-# =====
-# Business/School Manager
+# ==============================================================================
+# [SEC-BETA] Beta updates
 #
-# Required for ABM and ASM 
-# =====
+# Needed to sign into Beta Updates and use Feedback Assistant App
+# ==============================================================================
+
+bpapi.apple.com				# Enrollment update
+cssubmissions.apple.com			# File uploads from Feedback Assistant
+fba.apple.com				# Feedback Assistant view
+
+# ==============================================================================
+# [SEC-BSM] Business/School Manager
+#
+# Required for Apple Business Manager (ABM) and Apple School Manager (ASM) 
+# ==============================================================================
 
 # Admins and managers
-# -----
-
-*.business.apple.com
-*.school.apple.com
-appleid.cdn-apple.com
-idmsa.apple.com
-*.itunes.apple.com
-*.mzstatic.com
-api.ent.apple.com
-api.edu.apple.com
-statici.icloud.com
-*.vertexsmb.com
-www.apple.com
-upload.appleschoolcontent.com
+# -------------------
+(\.*)\.business.apple.com$		# ABM
+(\.*)\.school.apple.com$		# ASM
+appleid.cdn-apple.com			# Login authentication
+idmsa.apple.com				# Login authentication
+(\.*)\.itunes.apple.com$		# Apps and Books
+(\.*)\.mzstatic.com$			# Apps and Books
+api.ent.apple.com			# Apps and Books (ABM)
+api.edu.apple.com			# Apps and Books (ASM)
+statici.icloud.com			# Device icons
+(\.*)\.vertexsmb.com$			# Validate tax-exempt status
+www.apple.com				# Fonts
+upload.appleschoolcontent.com		# SFTP uploads
 
 # Employees and students
-# -----
+# ----------------------
+ws-ee-maidsvc.icloud.com		# User lookup service
 
-ws-ee-maidsvc.icloud.com
-
-# ===== End of Business/School Manager =====
-
-# =====
-# Appple Business Essentials device management
+# ==============================================================================
+# [SEC-ABE] Appple Business Essentials device management
 #
 # Needed for Apple Business Essentials
-# =====
+# ==============================================================================
 
-axm-adm-enroll.apple.com
-axm-adm-mdm.apple.com
-axm-adm-scep.apple.com
-axm-app.apple.com
-*.apple-mapkit.com
-icons.axm-usercontent-apple.com
+axm-adm-enroll.apple.com		# DEP enrollment server
+axm-adm-mdm.apple.com			# MDM server
+axm-adm-scep.apple.com			# SCEP server
+axm-app.apple.com			# View and manage apps & devices
+(\.*)\.apple-mapkit.com$		# View location in Managed Lost Mode
+icons.axm-usercontent-apple.com		# Custom package icons
 
-# ===== End of Business Essentials device management  =====
-
-# =====
-# Classroom and Schoolwork apps
+# ==============================================================================
+# [SEC-CLS-SCHL] Classroom and Schoolwork apps
 #
 # Needed for student and teacher devices using Classroom & Schoolwork (which also require Apple account and iCloud)
-# =====
+# ==============================================================================
 
-s.mzstatic.com
-play.itunes.apple.com
-ws-ee-maidsvc.icloud.com
-ws.school.apple.com
-pg-bootstrap.itunes.apple.com
-cls-iosclient.itunes.apple.com
-cls-ingest.itunes.apple.com
-
-# ===== End of Classroom & Schoolwork  =====
-
+s.mzstatic.com				# Device verification
+play.itunes.apple.com			# Device verification
+ws-ee-maidsvc.icloud.com		# Class rosters
+ws.school.apple.com			# Roster service
+pg-bootstrap.itunes.apple.com		# Schoolwork handout
+cls-iosclient.itunes.apple.com		# Schoolwork handout
+cls-ingest.itunes.apple.com		# Schoolwork handout
 
 
